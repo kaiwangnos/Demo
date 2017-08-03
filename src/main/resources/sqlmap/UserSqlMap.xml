@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.dao.UserDao">
+    <resultMap id="user_map01" type="User">
+        <result column="username" jdbcType="VARCHAR" property="userName"/>
+        <result column="password" jdbcType="VARCHAR" property="passWord"/>
+        <result column="nickname" jdbcType="VARCHAR" property="nickName"/>
+        <!--<result column="birth_date" jdbcType="VARCHAR" property="birthDay"/>-->
+        <result column="sex" jdbcType="VARCHAR" property="sex"/>
+        <result column="age" jdbcType="VARCHAR" property="age"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+    </resultMap>
+    <select id="sel_user01" resultMap="user_map01">
+        SELECT
+        username,
+        password,
+        nickname,
+        sex,
+        age,
+        phone,
+        email
+        FROM
+        USER
+    </select>
+
+</mapper>
