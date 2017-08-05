@@ -18,15 +18,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserVo> login() {
-//        List<UserVo> userVos = new ArrayList<>();
-//        UserVo userVo1 = new UserVo();
-//        userVo1.setAge(23);
-//        userVo1.setBirthDay("1994-03-05");
-//        userVo1.setNickName("二狗");
-//        userVo1.setEmail("3985@mei.com");
-//        userVos.add(userVo1);
-//        return userVos;
+        List<UserVo> userVos = new ArrayList<>();
+        UserVo userVo1 = new UserVo();
+        userVo1.setAge(23);
+        userVo1.setBirthDay("1994-03-05");
+        userVo1.setNickName("二狗");
+        userVo1.setEmail("3985@mei.com");
+        userVos.add(userVo1);
+        return userVos;
 
-        return userDao.sel_user01();
+//        return userDao.sel_user01();
     }
 }

@@ -17,7 +17,7 @@
     <!--配置视图解析器-->
     <!-- html视图解析器 -->
     <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer"
-        p:templateLoaderPath="/WEB-INF/pages/"/>
+        p:templateLoaderPath="/WEB-INF/pages/" p:defaultEncoding="utf-8"/>
     
     <bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
         <property name="exposeRequestAttributes" value="true"/>
@@ -37,6 +37,6 @@
 
     <!--开启静态访问-->
     <mvc:resources mapping="/www/**" location="/www/"/>
-    <mvc:resources mapping="/WEB-INF/pages/**/*.html" location="/WEB-INF/pages//"/>
+    <mvc:resources mapping="/WEB-INF/pages/**/*.html" location="/WEB-INF/pages/errorpage/"/>
 
 </beans>
