@@ -2,10 +2,12 @@ package com.ssm.service.impl;
 
 import com.ssm.dao.UserDao;
 import com.ssm.getvo.UserVo;
+import com.ssm.requestbo.UserLoginRequestBo;
 import com.ssm.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +19,7 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public List<UserVo> login() {
+    public List<UserVo> login(UserLoginRequestBo requestBo, HttpServletResponse response) {
         List<UserVo> userVos = new ArrayList<>();
         UserVo userVo1 = new UserVo();
         userVo1.setAge(23);

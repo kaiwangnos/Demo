@@ -42,10 +42,11 @@
             <tx:method name="save*" propagation="REQUIRED"/>
             <tx:method name="insert*" propagation="REQUIRED"/>
             <tx:method name="add*" propagation="REQUIRED"/>
+
         </tx:attributes>
     </tx:advice>
-    <aop:config>
-        <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.ssm.service.impl.*.*(..))"/>
-    </aop:config>
+<aop:config>
+<aop:advisor advice-ref="txAdvice" pointcut="execution(* com.ssm.service.impl.*.*(..))"/>
+</aop:config>
 
 </beans>
