@@ -23,9 +23,8 @@ public class UserController {
         return "login";
     }
 
-    @PostMapping("login")
-//    @RequestMapping(value = "login", method = RequestMethod.POST)
     @ResponseBody
+    @PostMapping("/login")
     public Resultvo login(@RequestBody UserLoginRequestBo requestBo, HttpServletRequest request, HttpServletResponse response) {
 
         Resultvo result = new Resultvo();
@@ -34,7 +33,11 @@ public class UserController {
         List<UserVo> userVo = null;
         try {
             userVo = userService.login(requestBo, response);
-            ret = true;
+            if (userVo != null && userVo.size() > 0) {
+                ret = true;
+            } else {
+                errorMessage = "用户名或密码错误！";
+            }
         } catch (Exception e) {
             errorMessage = "服务器异常！！请重新登录";
         }
@@ -45,4 +48,5 @@ public class UserController {
         //返回数据
         return result;
     }
+
 }

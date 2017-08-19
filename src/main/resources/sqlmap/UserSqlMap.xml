@@ -11,18 +11,24 @@
         <result column="age" jdbcType="VARCHAR" property="age"/>
         <result column="phone" jdbcType="VARCHAR" property="phone"/>
         <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="user_type" jdbcType="VARCHAR" property="userType"/>
     </resultMap>
-    <select id="sel_user01" resultMap="user_map01">
+    <select id="sel_user01" parameterType="com.ssm.sqlbo.UserLoginSelBo" resultMap="user_map01">
         SELECT
-        username,
-        password,
-        nickname,
-        sex,
-        age,
-        phone,
-        email
+            username,
+            password,
+            nickname,
+            sex,
+            age,
+            phone,
+            email,
+            user_type
         FROM
-        USER
+            user
+        WHERE
+            username = #{userName}
+        AND
+            password = #{passWord}
     </select>
 
 </mapper>

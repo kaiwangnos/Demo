@@ -1,9 +1,9 @@
-package com.ssm.requestbo;
+package com.ssm.sqlbo;
 
-public class UserLoginRequestBo {
+
+public class UserLoginSelBo {
     private String userName = "";
     private String passWord = "";
-
 
     public String getUserName() {
         return userName;
