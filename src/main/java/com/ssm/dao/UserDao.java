@@ -1,5 +1,6 @@
 package com.ssm.dao;
 
+import com.ssm.sqlbo.RegisterInsertBo;
 import com.ssm.sqlbo.UserLoginSelBo;
 import org.springframework.stereotype.Repository;
 
@@ -8,5 +9,6 @@ import com.ssm.getvo.UserVo;
 
 @Repository
 public interface UserDao {
-    List<UserVo> sel_user01(UserLoginSelBo paramBo);
+    UserVo sel_user01(UserLoginSelBo paramBo);
+    UserVo insert_user01(RegisterInsertBo paramBo);
 }

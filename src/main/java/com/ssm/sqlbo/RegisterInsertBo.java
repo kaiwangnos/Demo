@@ -1,7 +1,8 @@
-package com.ssm.getvo;
+package com.ssm.sqlbo;
 
-public class UserVo {
 
+public class RegisterInsertBo {
+    private String userNo="";
     private String userId = "";
     private String userName="";
     private String password = "";
@@ -12,12 +13,28 @@ public class UserVo {
     private int userType = 0;
     private int delFlg = 0;
 
+    public String getUserNo() {
+        return userNo;
+    }
+
+    public void setUserNo(String userNo) {
+        this.userNo = userNo;
+    }
+
     public String getUserId() {
         return userId;
     }
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -74,13 +91,5 @@ public class UserVo {
 
     public void setDelFlg(int delFlg) {
         this.delFlg = delFlg;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 }

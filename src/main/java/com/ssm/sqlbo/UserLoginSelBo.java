@@ -2,22 +2,31 @@ package com.ssm.sqlbo;
 
 
 public class UserLoginSelBo {
-    private String userName = "";
-    private String passWord = "";
+    private String userId = "";
+    private String password = "";
+    private int delFlg = 0;
 
-    public String getUserName() {
-        return userName;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public int getDelFlg() {
+        return delFlg;
+    }
+
+    public void setDelFlg(int delFlg) {
+        this.delFlg = delFlg;
     }
 }

@@ -34,14 +34,14 @@ function login() {
     $.ajax(
         {
             type: "post",
-            dataType:"json",
+            dataType: "json",
             url: url,
             data: JSON.stringify(paramData),
             contentType: "application/json;charset=utf-8",
             success: function (data) {
 
-                    // alert(data.errMsg);
-                     ng(data);
+                // alert(data.errMsg);
+                ng(data);
 
             }
             ,
@@ -49,8 +49,7 @@ function login() {
                 ng(data);
             }
 
-        }
-    );
+        });
 }
 
 function ok(data) {
@@ -58,10 +57,10 @@ function ok(data) {
 }
 
 function ng(data) {
-    if(data.resultCode==0){
+    if (data.resultCode == 0) {
         alert(data.resultCode);
     }
-    if(data.resultCode==1){
+    if (data.resultCode == 1) {
         alert(data.resultCode);
     }
     alert("登录失败");

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <link rel="stylesheet" href="www/bootstrap/css/bootstrap.css">
+    <script src="www/jquery/jquery-3.2.1.js"></script>
+    <!--<script src="www/script/common/common.js"></script>-->
+    <script src="www/script/register.js"></script>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <title>注册页面</title>
+</head>
+<body>
+<h2>欢迎注册</h2>
+<div style="text-align: center">
+    <span id="message"></span>
+</div>
+<div style="text-align: center">
+    <table style="text-align: center">
+        <tr>
+            <td>用户ID：</td><td><input id="userId"/></td>
+        </tr>
+        <tr>
+            <td>姓名：</td><td><input id="userName"/></td>
+        </tr>
+        <tr>
+            <td>密码：</td><td><input id="password" type="password"/></td>
+        </tr>
+        <tr>
+            <td>密码确认：</td><td><input id="password1" type="password"/></td>
+        </tr>
+        <tr>
+            <td>性别：</td>
+            <td>
+                <select id="sex">
+                    <option value="0">不选</option>
+                    <option value="1">男</option>
+                    <option value="2">女</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>年龄：</td><td><input id="age" type="number"/></td>
+        </tr>
+        <tr>
+            <td>电话号码：</td><td><input id="phone"/></td>
+        </tr>
+        <tr>
+            <td>电子邮箱：</td><td><input id="mail" type="email"/></td>
+        </tr>
+    </table>
+</div>
+<div><br/></div>
+<div style="text-align: center">
+    <button id="register">提交</button>
+</div>
+</body>
+</html>
