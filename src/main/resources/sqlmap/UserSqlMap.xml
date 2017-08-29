@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ssm.dao.UserDao">
+<mapper namespace="user">
     <resultMap id="user_map01" type="User">
+        <result column="user_id" jdbcType="VARCHAR" property="userId"/>
         <result column="user_name" jdbcType="VARCHAR" property="userName"/>
         <result column="sex" jdbcType="INTEGER" property="sex"/>
         <result column="age" jdbcType="INTEGER" property="age"/>
         <result column="phone" jdbcType="VARCHAR" property="phone"/>
         <result column="mail" jdbcType="VARCHAR" property="mail"/>
         <result column="user_type" jdbcType="INTEGER" property="userType"/>
-        <result column="del_flg" jdbcType="INTEGER" property="del_flg"/>
+        <result column="del_flg" jdbcType="INTEGER" property="delFlg"/>
     </resultMap>
     <select id="sel_user01" parameterType="com.ssm.sqlbo.UserLoginSelBo" resultMap="user_map01">
         SELECT
+            user_id,
             user_name,
             sex,
             age,
@@ -26,6 +28,7 @@
             user_id = #{userId}
         AND
             password = #{password}
+        AND  del_flg = 0
     </select>
 
     <!--新用户注册-->

@@ -10,5 +10,5 @@ import com.ssm.getvo.UserVo;
 @Repository
 public interface UserDao {
     UserVo sel_user01(UserLoginSelBo paramBo);
-    UserVo insert_user01(RegisterInsertBo paramBo);
+    void insert_user01(RegisterInsertBo paramBo);
 }

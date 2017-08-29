@@ -28,7 +28,8 @@
           p:mapperLocations="classpath:sqlmap/*.xml"
           p:configLocation="classpath:mybatis.xml"/>
     <!--定义扫描DAO接口-->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" p:basePackage="com.ssm.dao"/>
+    <!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" p:basePackage="com.ssm.dao"/>-->
+
     <!--定义事务-->
     <bean id="transactionManager"
           class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
@@ -45,8 +46,12 @@
 
         </tx:attributes>
     </tx:advice>
-<aop:config>
-<aop:advisor advice-ref="txAdvice" pointcut="execution(* com.ssm.service.impl.*.*(..))"/>
-</aop:config>
+    <aop:config>
+        <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.ssm.service.impl.*.*(..))"/>
+    </aop:config>
+
+    <bean id="sqlSessiion" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory"/>
+    </bean>
 
 </beans>

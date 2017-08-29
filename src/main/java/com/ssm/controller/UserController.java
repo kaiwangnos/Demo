@@ -12,6 +12,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -35,7 +36,7 @@ public class UserController {
     public Resultvo login(@RequestBody UserLoginRequestBo requestBo, HttpServletRequest request,
                           HttpSession session, HttpServletResponse response) {
         Resultvo result = new Resultvo();
-        List<UserVo> dataList = null;
+        List<UserVo> dataList = new ArrayList<>();
         boolean ret = false;
         String errorMessage = "";
         UserVo userVo = null;
@@ -46,9 +47,11 @@ public class UserController {
                 dataList.add(userVo);
             } else {
                 errorMessage = "用户名或密码错误！";
+                ret = false;
             }
         } catch (Exception e) {
             errorMessage = "服务器异常！！请重新登录";
+            ret = false;
         }
         result.setResultCode(ret ? 0 : 1);
         result.setErrMsg(ret ? "" : errorMessage);

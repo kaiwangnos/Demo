@@ -10,12 +10,12 @@ $(document).ready(function () {
 
 function login() {
     var url = "http://localhost:8080/demo/login";
-    var userName = document.getElementById("username").value;
-    var passWord = document.getElementById("password").value;
+    var userId = document.getElementById("userId").value;
+    var password = document.getElementById("password").value;
 
     var paramData = {
-        "userName": userName,
-        "passWord": passWord
+        "userId": userId,
+        "password": password
     }
 
     // $.post(url, JSON.stringify(parmData), function (data) {

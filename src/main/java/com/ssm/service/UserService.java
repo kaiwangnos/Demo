@@ -9,5 +9,5 @@ import javax.servlet.http.HttpSession;
 
 public interface UserService {
     UserVo login(UserLoginRequestBo requestBo, HttpSession session, HttpServletResponse response);
-    Boolean addUser(RegisterRequestBo requestBo, HttpSession session, HttpServletResponse response);
+    boolean addUser(RegisterRequestBo requestBo, HttpSession session, HttpServletResponse response);
 }
