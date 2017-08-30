@@ -2,6 +2,7 @@ package com.ssm.service.impl;
 
 import com.ssm.dao.GeneralDao;
 import com.ssm.dao.UserDao;
+import com.ssm.exception.DaoException;
 import com.ssm.getvo.UserVo;
 import com.ssm.requestbo.RegisterRequestBo;
 import com.ssm.requestbo.UserLoginRequestBo;
@@ -52,10 +53,10 @@ public class UserServiceImpl implements UserService {
         registerInsertBo.setMail(requestBo.getMail());
         registerInsertBo.setUserType(0);
         registerInsertBo.setDelFlg(0);
-        try {
-//            userDao.insert_user01(registerInsertBo);
-        } catch (Exception e) {
-            e.printStackTrace();
+
+        int addResult = dao.addEntity("user.insert_user01", registerInsertBo);
+        if (addResult >= 0) {
+            throw new DaoException("DAO异常");
         }
         return true;
     }

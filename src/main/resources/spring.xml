@@ -43,6 +43,7 @@
             <tx:method name="save*" propagation="REQUIRED"/>
             <tx:method name="insert*" propagation="REQUIRED"/>
             <tx:method name="add*" propagation="REQUIRED"/>
+            <tx:method name="*" propagation="REQUIRED" rollback-for="com.ssm.exception.DaoException"/>
 
         </tx:attributes>
     </tx:advice>

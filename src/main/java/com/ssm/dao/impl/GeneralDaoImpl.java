@@ -45,7 +45,7 @@ public class GeneralDaoImpl implements GeneralDao {
     public int addEntity(String sqlId, Object value) {
         int updateResult = -1;
         try {
-            updateResult = sqlSessionTemplate.update(sqlId, value);
+            updateResult = sqlSessionTemplate.insert(sqlId, value);
         } catch (Exception ex) {
             ex.printStackTrace();
             return updateResult;
